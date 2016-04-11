@@ -1,0 +1,59 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="public_html/main-style.css">
+  <script src="jscript\jquery-2.2.1.min.js"></script>
+  <script src="verification\checkquery.js"></script>
+  <script src="verification\checkpassword.js"></script>
+  <script src='verification\justBefore.js'></script>
+</head><body>
+  <nav>
+
+      <ul>
+          <li>  <div>  <img src="http://www.thisiscolossal.com/wp-content/uploads/2015/05/avacado-1.jpg" style="width:80px"></div></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Recipes</a>
+          </li>
+          <li><a href="#">Your Profile</a>
+              <ul>
+                  <li><a href="#">Favourites</a></li>
+                  <li><a href="#">Shopping Cart</a></li>
+                  <li><a href="#">Profile Stats</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="forum.html">Sign Up</a></li>
+      </ul>
+  </nav>
+<span id="error" class="errorclass"></span><br>
+<form action='forum.php' method="post" id='sign_up'>
+First Name: <input type="text" name="fname" id="fname" required="true"><br>
+Last Name: <input type="text" name="lname" id="lname" required="true"><br>
+Username: <input type="text" name="uname" id="uname" required="true"><span id='unamecheckresult'></span><br>
+E-mail: <input type="email" name="email" required="true" id="uemail"> <span id="emailcheckresult"></span><br>
+<table>
+<tr>
+<td>
+Password: <input id="user_password" type="password" maxlength="20" name="password"  onkeyup="chkPasswordStrength(this.value,document.getElementById('strendth'),document.getElementById('error'))" required="true">
+</td>
+<td id="strendth" class="strength5"><b>Password Strength</b></td>
+</tr>
+<tr>
+  <td id='error' class='errorclass'></td>
+</tr>
+</table>
+  <br>
+Height: Feet:<input type="number" name="feet"min="0" max="8" required="true"><t>
+Inches<input type="number" name="inches" min="0" max="11" required="true"><br>
+Weight: <input type="number" name="inches" min="0" required="true"><br>
+Sex:
+<input type="radio" name="gender" value="male" required="true"> Male
+<input type="radio" name="gender" value="female"> Female<br>
+Excercise level: <a href="fitinfo.html" target="_blank"><img src="images\info.png" style="width:10px; height:10px;"></a><br>
+<input type="radio" name="fitness" value="sedentary" required="true"> sedentary<br>
+<input type="radio" name="fitness" value="light"> lightly active<br>
+<input type="radio" name="fitness" value="moderate"> moderately active<br>
+<input type="radio" name="fitness" value="very"> very active<br>
+<input type="radio" name="fitness" value="extreme"> extremely active<br>
+<input type="button" onclick="checkEverything()"name="submit" value="submit"></input>
+</form>
+</body>
